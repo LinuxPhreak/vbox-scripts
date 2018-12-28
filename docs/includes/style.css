@@ -7,3 +7,7 @@ h1 {
 	font-size: 64px;
 	font-weight: bold;
 }
+hr {
+	color: #0a7607;
+	width: 60%;
+}
