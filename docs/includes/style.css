@@ -17,7 +17,7 @@ hr {
 }
 #main {
 	width: 80%;
-	background-color: #ffffff;
+	/*background-color: #ffffff;*/
 	text-align: left;
 	margin-left: auto ;
   	margin-right: auto ;
@@ -26,4 +26,11 @@ hr {
 	width: 70%;
 	background-color: #660066;
 	float: left;
+}
+#right {
+	width: 20%;
+	float: left;
+}
+h2 {
+	text-align: center;
 }
