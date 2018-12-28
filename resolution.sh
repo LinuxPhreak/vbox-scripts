@@ -38,7 +38,4 @@ if [ $noyes == "y" -o $noyes == "Y" ]; then
 		esac
 		break
 	done
-	#VBoxManage setextradata "$name" VBoxInternal2/EfiGraphicsResolution X
-	#1280x720, 1920x1080, 2048x1080, 2560x1440, 3840x2160, 1280x800, 1280x1024, 1440x900, 1600x900
-	#VirtualBox doesn't support: 1366x768 (you can use 1280x720 with "Scaled Mode"). 
 fi
