@@ -11,3 +11,19 @@ hr {
 	color: #0a7607;
 	width: 60%;
 }
+#logo {
+	width: 150px;
+	height: 150px;
+}
+#main {
+	width: 80%;
+	background-color: #ffffff;
+	text-align: left;
+	margin-left: auto ;
+  	margin-right: auto ;
+}
+#left {
+	width: 70%;
+	background-color: #660066;
+	float: left;
+}
