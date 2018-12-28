@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
+#Script inspired by https://techsviewer.com/install-macos-10-14-mojave-virtualbox-windows/
+#https://techsviewer.com/install-macos-sierra-virtualbox-windows/
+
 choices=( 'Mac OSX High Sierra' 'Mac OSX Mojave' )
-reschoose=('1920x1080' '1680x1050' '1400x1050' '1600x900' '1280x1024' '1400x900')
+
 echo "Enter the correct number for the version you wish to install..."
 
 select choice in "${choices[@]}"; do
