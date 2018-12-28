@@ -12,20 +12,28 @@ if [ $noyes == "y" -o $noyes == "Y" ]; then
 
 		case $choice in
 			'1920x1080')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 1920x1080
 				;;
 			'2048x1080')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 2048x1080
 				;;
 			'2560x1440')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 2560x1440
 				;;
 			'3840x2160')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 3840x2160
 				;;
 			'1280x800')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 1280x800
 				;; 
 			'1280x1024')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 1280x1024
 				;;
 			'1440x900') 
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 1440x900
 				;;
 			'1600x900')
+				VBoxManage setextradata “$name” VBoxInternal2/EfiGraphicsResolution 1600x900
 				;;
 		esac
 		break
