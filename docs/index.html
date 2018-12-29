@@ -41,12 +41,24 @@
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">About</a></li>
+				<li><a href="#tabs-2">FAQ's</a></li>
 			</ul>
 			<div id="tabs-1">VirtualBox Scripts is a set of scripts for VirtualBox being written by <a href="http://ben-dorsi-todaro.com/" target="_blank">Ben P. Dorsi-Todaro</a>. It was initially inspired when he tried to install Mac OSX on VirtualBox and realized the writers of a tutorial didn't offer an easy solution for people, and required people to copy and paste commands. </div>
+			<div id="tabs-2">
+				<div id="faqs">
+					<h3>Where Can I get the Mac OSX VM's?</h3>
+					<div>Here is a list of links to get the VBox Mac VMDK VM's.
+						<ul>
+							<li><a href="https://drive.google.com/drive/folders/1c4omofNQGoe9fMAl94ZVtraD0f43A4Yk" target="_blank">Mac OSX High Sierra</a></li>
+							<li><a href="https://drive.google.com/drive/folders/1gpWiB7uWiNgsTcbKhuYhLaPReYPmjcfN" target="_blank">Mac OSX Mojave</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="right">
-		<div id="accordion">
+		<div id="right-acc">
 			<h3>Mailing List</h3>
 			<div>Join the mailing list</div>
 			<h3>Advertise</h3>
@@ -90,8 +102,7 @@
 <script src="includes/jquery-ui.min.js"></script>
 <script>
 $( "#tabs" ).tabs();
-$( "#accordion" ).accordion();
-
+$( "#right-acc" ).accordion();
 $( "#dialog-btc" ).dialog({
 	autoOpen: false,
 	width: 400,
