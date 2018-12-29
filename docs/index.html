@@ -45,14 +45,21 @@
 			</ul>
 			<div id="tabs-1">VirtualBox Scripts is a set of scripts for VirtualBox being written by <a href="http://ben-dorsi-todaro.com/" target="_blank">Ben P. Dorsi-Todaro</a>. It was initially inspired when he tried to install Mac OSX on VirtualBox and realized the writers of a tutorial didn't offer an easy solution for people, and required people to copy and paste commands. </div>
 			<div id="tabs-2">
-				<div id="faqs">
-					<h3>Where Can I get the Mac OSX VM's?</h3>
-					<div>Here is a list of links to get the VBox Mac VMDK VM's.
-						<ul>
-							<li><a href="https://drive.google.com/drive/folders/1c4omofNQGoe9fMAl94ZVtraD0f43A4Yk" target="_blank">Mac OSX High Sierra</a></li>
-							<li><a href="https://drive.google.com/drive/folders/1gpWiB7uWiNgsTcbKhuYhLaPReYPmjcfN" target="_blank">Mac OSX Mojave</a></li>
-						</ul>
-					</div>
+				<div class="question qone">
+					<h3>Where can I get the Mac OSX VM's for VirtualBox?</h3>
+				</div>
+				<div  class="answer one">
+					Here is a list of links of the VM's I use for you to download. Caution they are big files, require Linux users to have unrar installed, and during download they take up alot of bandwidth.
+					<ul>
+						<li><a href="https://drive.google.com/drive/folders/1c4omofNQGoe9fMAl94ZVtraD0f43A4Yk" target="_blank">Mac OSX High Sierra</a></li>
+						<li><a href="https://drive.google.com/drive/folders/1gpWiB7uWiNgsTcbKhuYhLaPReYPmjcfN" target="_blank">Mac OSX Mojave</a></li>
+					</ul>
+				</div>
+				<div class="question qtwo">
+					<h3>Will these scripts work for Windows?</h3>
+				</div>
+				<div  class="answer two">
+					At present time all scripts being written are for Linux. They may or may not work on Macs but will NOT work on Windows.
 				</div>
 			</div>
 		</div>
@@ -149,6 +156,14 @@ $( "#donate-bitcoin" ).click(function( event ) {
 $( "#donate-bch" ).click(function( event ) {
 	$( "#dialog-bch" ).dialog( "open" );
 	event.preventDefault();
+});
+
+$(".qone").click(function(){
+  $(".one").toggle();
+});
+
+$(".qtwo").click(function(){
+  $(".two").toggle();
 });
 </script>
 </body>

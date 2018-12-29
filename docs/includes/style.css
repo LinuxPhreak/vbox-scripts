@@ -34,3 +34,13 @@ hr {
 h2 {
 	text-align: center;
 }
+.question {
+	background-color: #424040;
+}
+.question:hover {
+	background-color: #989898;
+}
+.answer {
+	display: none;
+	background-color: #000000;
+}
