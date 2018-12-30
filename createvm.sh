@@ -8,18 +8,30 @@ select ostype in "${ostypes[@]}"; do
  			echo -e "Operating System Type Other"
  			echo -e "What do you want to call this VM?"
  			read name
- 			echo -e "How much memory do you want to givw your VM?"
- 			read memory
+ 			while [ x$no != "N" -o x$no != "n" ]
+			do
+ 				echo -e "How much memory do you want to givw your VM?"
+ 				read memory
+ 				echo -e "You want to set $memory MB for your VM? Is this correct? (y/N)"
+				read no
+				if [ $no == "y" -o $no == "Y" ]; then
+					break
+				fi
+			done
  			echo -e "Would you like to create a new Hard Disk? (y/N)"
- 			if [ x$no == "N" -o x$no == "n" ]; then
+ 			read yhdd
+ 			if [ x$yhdd == "N" -o x$yhdd == "n" ]; then
  				echo -e "Please select an existing hard disk to use as your VM"
  			else
  				echo -e "What size do you want to make your hard disk?"
  				read hdsize
  			fi
  			VBoxManage createvm --name "$name" --ostype Other --register
- 			VBoxManage modifyvm testMachine --memory $memory
- 			VBoxManage createhd --filename "$name.vdi" --size $hdsize --format
+ 			VBoxManage modifyvm "$name" --memory $memory
+ 			VBoxManage createhd --filename "$name.vdi" --size $hdsize --format VDI
+			VBoxManage storageattach "$name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$name.vdi"
+			VBoxManage storagectl "$name" --name "SATA Controller" --add sata --controller IntelAhci
+			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4									
  			;;
  		'Other_64')
  			;;
@@ -73,11 +85,13 @@ select ostype in "${ostypes[@]}"; do
  			;;
  		'Windows2016_64')
  			;;
+ 	esac
+	break
 done
 #VBoxManage createvm --name "FBSD Test" --ostype FreeBSD_64 --register
 #VBoxManage modifyvm testMachine --memory 256
 #VBoxManage createhd --filename testMachine.vdi --size 18000 --format
-#support@tester:~$ VBoxManage storageattach "testMachine" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium testMachine.vdi
+#VBoxManage storageattach "testMachine" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium testMachine.vdi
 #VBoxManage storagectl testMachine --name "SATA Controller" --add sata --controller IntelAhci
 #VBoxManage storagectl testMachine --name "IDE Controller" --add ide --controller PIIX4
 #VBoxManage storageattach testMachine --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium debian-6.0.3-amd64-i386-netinst.iso
