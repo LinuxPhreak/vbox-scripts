@@ -43,7 +43,11 @@
 				<li><a href="#tabs-1">About</a></li>
 				<li><a href="#tabs-2">FAQ's</a></li>
 			</ul>
-			<div id="tabs-1">VirtualBox Scripts is a set of scripts for VirtualBox being written by <a href="http://ben-dorsi-todaro.com/" target="_blank">Ben P. Dorsi-Todaro</a>. It was initially inspired when he tried to install Mac OSX on VirtualBox and realized the writers of a tutorial didn't offer an easy solution for people, and required people to copy and paste commands. </div>
+			<div id="tabs-1"><p>VirtualBox Scripts is a set of scripts for VirtualBox being written by <a href="http://ben-dorsi-todaro.com/" target="_blank">Ben P. Dorsi-Todaro</a>. It was initially inspired when he tried to install Mac OSX on VirtualBox and realized the writers of a tutorial didn't offer an easy solution for people, and required people to copy and paste commands. </p>
+				<p>The primary scripts help install Mac OSX on <a href="http://adf.ly/D0XhP" target="_blank">VirtualBox</a>.</p>
+				<h2>Get the scripts on GitHub</h2>
+				<a href="https://github.com/LinuxPhreak/vbox-scripts" title="Get it on GitHub"><img src="images/github.png" alt="GitHub" style="margin-left: auto; margin-right: auto; display: block;" /></a>
+			</div>
 			<div id="tabs-2">
 				<div class="question qone">
 					<h3>Where can I get the Mac OSX VM's for VirtualBox?</h3>
@@ -67,7 +71,10 @@
 	<div id="right">
 		<div id="right-acc">
 			<h3>Mailing List</h3>
-			<div>Join the mailing list</div>
+			<div>Join the mailing list
+				<input type="text" class="ui-corner-all ui-widget" placeholder="email address" />
+				<input type="submit" class="ui-button ui-corner-all ui-widget" value="Submit" />
+			</div>
 			<h3>Advertise</h3>
 			<div>
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -110,6 +117,7 @@
 <script>
 $( "#tabs" ).tabs();
 $( "#right-acc" ).accordion();
+$( "#tooltip" ).tooltip();
 $( "#dialog-btc" ).dialog({
 	autoOpen: false,
 	width: 400,
