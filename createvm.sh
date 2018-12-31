@@ -33,9 +33,10 @@ select ostype in "${ostypes[@]}"; do
  			VBoxManage createvm --name "$name" --ostype Other --register
  			VBoxManage modifyvm "$name" --memory $memory
  			VBoxManage createhd --filename "$vboxdir/$name/$name.vdi" --size $hdsize --format VDI
+ 			VBoxManage storagectl "$name" --name "SATA Controller" --add sata --controller IntelAhci
 			VBoxManage storageattach "$name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/$name/$name.vdi"
-			VBoxManage storagectl "$name" --name "SATA Controller" --add sata --controller IntelAhci
-			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4									
+			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4
+			#VBoxManage storageattach "$name" --storagectl "IDE" --port 0 --device 1 --type dvddrive --medium emptydrive								
  			;;
  		'Other_64')
  			;;
