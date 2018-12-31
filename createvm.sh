@@ -11,7 +11,6 @@ select ostype in "${ostypes[@]}"; do
  			echo -e "Operating System Type Other"
  			echo -e "What do you want to call this VM?"
  			read name
- 			mkdir -p "$vboxdir/$name"
  			while [ x$no != "N" -o x$no != "n" ]
 			do
  				echo -e "How much memory do you want to give your VM?"
@@ -35,6 +34,7 @@ select ostype in "${ostypes[@]}"; do
  					break
  				fi
  			done
+ 			mkdir -p "$vboxdir/$name"
  			VBoxManage createvm --name "$name" --ostype Other --register
  			VBoxManage modifyvm "$name" --memory $memory
  			VBoxManage createhd --filename "$vboxdir/$name/$name.vdi" --size $hdsize --format VDI
