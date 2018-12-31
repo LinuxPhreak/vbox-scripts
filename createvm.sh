@@ -36,7 +36,7 @@ select ostype in "${ostypes[@]}"; do
  			VBoxManage storagectl "$name" --name "SATA Controller" --add sata --controller IntelAhci
 			VBoxManage storageattach "$name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/$name/$name.vdi"
 			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4
-			#VBoxManage storageattach "$name" --storagectl "IDE" --port 0 --device 1 --type dvddrive --medium emptydrive								
+			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive								
  			;;
  		'Other_64')
  			;;
