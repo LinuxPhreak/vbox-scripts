@@ -22,14 +22,19 @@ select ostype in "${ostypes[@]}"; do
 					break
 				fi
 			done
- 			echo -e "Would you like to create a new Hard Disk? (y/N)"
- 			read yhdd
- 			if [ x$yhdd == "N" -o x$yhdd == "n" ]; then
- 				echo -e "Please select an existing hard disk to use as your VM"
- 			else
- 				echo -e "What size do you want to make your hard disk?"
- 				read hdsize
- 			fi
+			while [ x$yhd != "N" -o x$yhd != "n" -o x$yhd != "y" -o x$yhd != "Y" ]
+			do
+ 				echo -e "Would you like to create a new Hard Disk? (y/N)"
+ 				read yhd
+ 				if [ $yhd == "N" -o $yhd == "n" ]; then
+ 					echo -e "Please select an existing hard disk to use as your VM"
+ 					break
+ 				elif [ $yhd == "Y" -o $yhd == "y" ]; then
+ 					echo -e "What size do you want to make your hard disk?"
+ 					read hdsize
+ 					break
+ 				fi
+ 			done
  			VBoxManage createvm --name "$name" --ostype Other --register
  			VBoxManage modifyvm "$name" --memory $memory
  			VBoxManage createhd --filename "$vboxdir/$name/$name.vdi" --size $hdsize --format VDI
