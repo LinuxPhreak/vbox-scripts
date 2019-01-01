@@ -2,7 +2,7 @@
 echo -e "Type the name of the virtual machine you would like to start."
 read vmname
 VBoxManage startvm "$vmname"
-controloptions=('Off' 'Shutdown' 'Pause' 'Reset' 'Resume')
+controloptions=('Off' 'Shutdown' 'Pause' 'Reset')
 echo -e "Enter A Number to control the VM"
 
 select vmcontrol in "${controloptions[@]}"; do
@@ -28,9 +28,6 @@ select vmcontrol in "${controloptions[@]}"; do
 			;;
 		'Reset')
 			VBoxManage controlvm "$vmname" reset
-			;;
-		'Resume')
-			VBoxManage controlvm "$vmname" resume
 			;;
  	esac
 	break
