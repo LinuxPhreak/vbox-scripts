@@ -38,14 +38,81 @@ select ostype in "${ostypes[@]}"; do
  			VBoxManage createvm --name "$name" --ostype Other --register
  			VBoxManage modifyvm "$name" --memory $memory
  			VBoxManage createhd --filename "$vboxdir/$name/$name.vdi" --size $hdsize --format VDI
- 			VBoxManage storagectl "$name" --name "SATA Controller" --add sata --controller IntelAhci
-			VBoxManage storageattach "$name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/$name/$name.vdi"
-			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4
+ 			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4
+			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/$name/$name.vdi"
 			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive								
  			;;
  		'Other_64')
+  			echo -e "Operating System Type Other"
+ 			echo -e "What do you want to call this VM?"
+ 			read name
+ 			while [ x$no != "N" -o x$no != "n" ]
+			do
+ 				echo -e "How much memory do you want to give your VM?"
+ 				read memory
+ 				echo -e "You want to set $memory MB for your VM? Is this correct? (y/N)"
+				read no
+				if [ $no == "y" -o $no == "Y" ]; then
+					break
+				fi
+			done
+			while [ x$yhd != "N" -o x$yhd != "n" -o x$yhd != "y" -o x$yhd != "Y" ]
+			do
+ 				echo -e "Would you like to create a new Hard Disk? (y/N)"
+ 				read yhd
+ 				if [ $yhd == "N" -o $yhd == "n" ]; then
+ 					echo -e "Please type the path an existing hard disk to use as your VM"
+ 					break
+ 				elif [ $yhd == "Y" -o $yhd == "y" ]; then
+ 					echo -e "What size do you want to make your hard disk?"
+ 					read hdsize
+ 					break
+ 				fi
+ 			done
+ 			mkdir -p "$vboxdir/$name"
+ 			VBoxManage createvm --name "$name" --ostype Other_64 --register
+ 			VBoxManage modifyvm "$name" --memory $memory
+ 			VBoxManage createhd --filename "$vboxdir/$name/$name.vdi" --size $hdsize --format VDI
+ 			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4
+			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/$name/$name.vdi"
+			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive	
  			;;
  		'Windows31')
+  			echo -e "Operating System Type Other"
+ 			echo -e "What do you want to call this VM?"
+ 			read name
+ 			while [ x$no != "N" -o x$no != "n" ]
+			do
+ 				echo -e "How much memory do you want to give your VM?"
+ 				read memory
+ 				echo -e "You want to set $memory MB for your VM? Is this correct? (y/N)"
+				read no
+				if [ $no == "y" -o $no == "Y" ]; then
+					break
+				fi
+			done
+			while [ x$yhd != "N" -o x$yhd != "n" -o x$yhd != "y" -o x$yhd != "Y" ]
+			do
+ 				echo -e "Would you like to create a new Hard Disk? (y/N)"
+ 				read yhd
+ 				if [ $yhd == "N" -o $yhd == "n" ]; then
+ 					echo -e "Please type the path an existing hard disk to use as your VM"
+ 					break
+ 				elif [ $yhd == "Y" -o $yhd == "y" ]; then
+ 					echo -e "What size do you want to make your hard disk?"
+ 					read hdsize
+ 					break
+ 				fi
+ 			done
+ 			mkdir -p "$vboxdir/$name"
+ 			VBoxManage createvm --name "$name" --ostype Windows31 --register
+ 			VBoxManage modifyvm "$name" --memory $memory
+ 			VBoxManage createhd --filename "$vboxdir/$name/$name.vdi" --size $hdsize --format VDI
+ 			VBoxManage storagectl "$name" --name "Floppy Controller" --add  floppy --controller I82078
+ 			VBoxManage storagectl "$name" --name "IDE Controller" --add ide --controller PIIX4
+ 			VBoxManage storageattach "$name" --storagectl "Floppy Controller" --port 0 --device 0 --type floppy --medium emptydrive
+			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/$name/$name.vdi"
+			VBoxManage storageattach "$name" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive	
  			;;
  		'Windows95')
  			;;

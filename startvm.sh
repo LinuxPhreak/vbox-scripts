@@ -7,12 +7,16 @@ echo -e "Enter A Number to control the VM"
 
 select vmcontrol in "${controloptions[@]}"; do
 	[[ -n $vmcontrol ]] || { echo "Invalid choice." >&2; continue; }
+	while [ $vmcontrol != 1 -o $vmcontrol != 2 ]
+	do
 	case $vmcontrol in
 		'Off')
 			VBoxManage controlvm "$vmname" poweroff
+			break
 			;;
 		'Shutdown')
 			VBoxManage controlvm "$vmname" poweroff soft
+			break
 			;;
 		'Pause')
 			VBoxManage controlvm "$vmname" pause
@@ -31,4 +35,5 @@ select vmcontrol in "${controloptions[@]}"; do
 			;;
  	esac
 	break
+	done
 done	
