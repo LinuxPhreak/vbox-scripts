@@ -101,28 +101,28 @@
 			<div style="text-align: center;">
 				Donate to project
 				<button id="donate-bitcoin" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Bitcoin
+					<span class="ui-icon ui-icon-newwin"></span>Bitcoin
 				</button>
 				<button id="donate-bch" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Bitcoin Cash
+					<span class="ui-icon ui-icon-newwin"></span>Bitcoin Cash
 				</button>
 				<button id="donate-ltc" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Litecoin
+					<span class="ui-icon ui-icon-newwin"></span>Litecoin
 				</button>
 				<button id="donate-eth" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Ethereum
+					<span class="ui-icon ui-icon-newwin"></span>Ethereum
 				</button>
 				<button id="donate-xmr" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Monero
+					<span class="ui-icon ui-icon-newwin"></span>Monero
 				</button>
 				<button id="donate-etc" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Eth Classic
+					<span class="ui-icon ui-icon-newwin"></span>Eth Classic
 				</button>
 				<button id="donate-dash" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate DASH
+					<span class="ui-icon ui-icon-newwin"></span>DASH
 				</button>
 				<button id="donate-usdt" class="ui-button ui-corner-all ui-widget">
-					<span class="ui-icon ui-icon-newwin"></span>Donate Tether
+					<span class="ui-icon ui-icon-newwin"></span>Tether
 				</button>
 			</div>
 
@@ -137,7 +137,37 @@
 
 <div id="dialog-bch" title="Donate Bitcoin Cash">
 	<p>1QLQ6dGP4yMfp9j9imfWhCQA6ey3NSHAeG</p>
-	<img src="images/bch.png" alt="Bitcoin QR Code" />
+	<img src="images/bch.png" alt="Bitcoin Cash QR Code" />
+</div>
+
+<div id="dialog-ltc" title="Donate Litecoin">
+	<p>LWbybxtyp2Khp5h64AS7aC7WCcpD3gtpNB</p>
+	<img src="images/ltc.png" alt="Litecoin QR Code" />
+</div>
+
+<div id="dialog-eth" title="Donate Ethereum">
+	<p>0xf4139071f34a63AE9235e0c8B76Ed0DAC871f852</p>
+	<img src="images/eth.png" alt="Ethereum QR Code" />
+</div>
+
+<div id="dialog-xmr" title="Donate Monero">
+	<p>4AQPJ7J7CbtJhGUsg3CZHGSJp3TYyU9M9GkSA7RnX4SUFkueQ667NNy82f2T68bkXH8VnVpZuuA8g3NMWDxVT6uARdHFLLK</p>
+	<img src="images/xmr.png" alt="Monero QR Code" />
+</div>
+
+<div id="dialog-etc" title="Donate Ethereum Classic">
+	<p>0x4caBeBaB6cE5a8e75a9bbfa32fCA3e87F7378493</p>
+	<img src="images/etc.png" alt="Ethereum Classic QR Code" />
+</div>
+
+<div id="dialog-dash" title="Donate Dash">
+	<p>XmkxhV7sVG5rQYGEM9vpegfB3HHvwPcNSM</p>
+	<img src="images/dash.png" alt="Dash QR Code" />
+</div>
+
+<div id="dialog-usdt" title="Donate Tether">
+	<p>0xf4139071f34a63AE9235e0c8B76Ed0DAC871f852</p>
+	<img src="images/usdt.png" alt="Tether QR Code" />
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -146,42 +176,45 @@
 $( "#tabs" ).tabs();
 $( "#right-acc" ).accordion();
 $( "#tooltip" ).tooltip();
+
 $( "#dialog-btc" ).dialog({
 	autoOpen: false,
-	width: 400,
-	buttons: [
-		{
-			text: "Ok",
-			click: function() {
-				$( this ).dialog( "close" );
-			}
-		},
-		{
-			text: "Cancel",
-			click: function() {
-				$( this ).dialog( "close" );
-			}
-		}
-	]
+	width: 400
 });
 
 $( "#dialog-bch" ).dialog({
 	autoOpen: false,
-	width: 400,
-	buttons: [
-		{
-			text: "Ok",
-			click: function() {
-				$( this ).dialog( "close" );
-			}
-		},
-		{
-			text: "Cancel",
-			click: function() {
-				$( this ).dialog( "close" );
-			}
-		}
-	]
+	width: 400
+});
+
+$( "#dialog-ltc" ).dialog({
+	autoOpen: false,
+	width: 400
+});
+
+$( "#dialog-eth" ).dialog({
+	autoOpen: false,
+	width: 400
+});
+
+$( "#dialog-xmr" ).dialog({
+	autoOpen: false,
+	width: 1000
+});
+
+$( "#dialog-etc" ).dialog({
+	autoOpen: false,
+	width: 400
+});
+
+$( "#dialog-dash" ).dialog({
+	autoOpen: false,
+	width: 400
+});
+
+$( "#dialog-usdt" ).dialog({
+	autoOpen: false,
+	width: 400
 });
 
 $( "#donate-bitcoin" ).click(function( event ) {
@@ -191,6 +224,36 @@ $( "#donate-bitcoin" ).click(function( event ) {
 
 $( "#donate-bch" ).click(function( event ) {
 	$( "#dialog-bch" ).dialog( "open" );
+	event.preventDefault();
+});
+
+$( "#donate-ltc" ).click(function( event ) {
+	$( "#dialog-ltc" ).dialog( "open" );
+	event.preventDefault();
+});
+
+$( "#donate-eth" ).click(function( event ) {
+	$( "#dialog-eth" ).dialog( "open" );
+	event.preventDefault();
+});
+
+$( "#donate-xmr" ).click(function( event ) {
+	$( "#dialog-xmr" ).dialog( "open" );
+	event.preventDefault();
+});
+
+$( "#donate-etc" ).click(function( event ) {
+	$( "#dialog-etc" ).dialog( "open" );
+	event.preventDefault();
+});
+
+$( "#donate-dash" ).click(function( event ) {
+	$( "#dialog-dash" ).dialog( "open" );
+	event.preventDefault();
+});
+
+$( "#donate-usdt" ).click(function( event ) {
+	$( "#dialog-usdt" ).dialog( "open" );
 	event.preventDefault();
 });
 
