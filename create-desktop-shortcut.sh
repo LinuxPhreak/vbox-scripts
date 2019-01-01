@@ -5,12 +5,15 @@
 # This shell script is provided by Ben P. Dorsi-Todaro
 echo -e "Which Virtual Machine do you want to make a Desktop Shortcut for?"
 read vmname
-echo -e "[Desktop Entry]" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Encoding=UTF-8" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Version=1.0" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Name=$vmname" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Comment=Starts the VirtualBox machine $vmname" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Type=Application" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Exec=VBoxManage startvm '$vmname' %u" >> $HOME/Desktop/$vmname.Desktop
-echo -e "Icon=virtualbox-vbox.png" >> $HOME/Desktop/$vmname.Desktop
-chmod +x "$HOME/Desktop/$vmname.Desktop"
+if [[ -d "$HOME/VirtualBox VMs" ]]; then
+	echo -e "[Desktop Entry]" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Encoding=UTF-8" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Version=1.0" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Name=$vmname" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Comment=Starts the VirtualBox machine $vmname" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Type=Application" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Exec=VBoxManage startvm '$vmname' %u" >> $HOME/Desktop/$vmname.Desktop
+	echo -e "Icon=virtualbox-vbox.png" >> $HOME/Desktop/$vmname.Desktop
+	chmod +x "$HOME/Desktop/$vmname.Desktop"
+	echo -e "The shortcut was successfully created..."
+fi
