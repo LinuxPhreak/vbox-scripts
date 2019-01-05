@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>452</width>
-    <height>316</height>
+    <height>265</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,17 +37,14 @@
      </rect>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>150</x>
       <y>70</y>
-      <width>256</width>
-      <height>192</height>
+      <width>271</width>
+      <height>25</height>
      </rect>
-    </property>
-    <property name="viewMode">
-     <enum>QListView::ListMode</enum>
     </property>
     <item>
      <property name="text">
@@ -146,67 +143,87 @@
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.10 64</string>
+      <string>Mac OS 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.11 64</string>
+      <string>Mac OSX 10.6</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.12 64</string>
+      <string>Mac OSX 10.6 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.13 64</string>
+      <string>Mac OSX 10.7</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.6</string>
+      <string>Mac OSX 10.7 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.6 64</string>
+      <string>Mac OSX 10.8</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.7</string>
+      <string>Mac OSX 10.8 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.7 64</string>
+      <string>Mac OSX 10.9</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.8</string>
+      <string>Mac OSX 10.9 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.8 64</string>
+      <string>Mac OSX 10.10</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.9</string>
+      <string>Mac OSX 10.10 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 10.9 64</string>
+      <string>Mac OSX 10.11</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>MacOSX 64</string>
+      <string>Mac OSX 10.11 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mac OSX 10.12</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mac OSX 10.12 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mac OSX 10.13</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mac OSX 10.13 64</string>
      </property>
     </item>
     <item>
@@ -281,7 +298,7 @@
     </item>
     <item>
      <property name="text">
-      <string>OS21x</string>
+      <string>OS2.1x</string>
      </property>
     </item>
     <item>
@@ -291,17 +308,17 @@
     </item>
     <item>
      <property name="text">
-      <string>OS2Warp3</string>
+      <string>OS2 Warp3</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>OS2Warp4</string>
+      <string>OS2 Warp4</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>OS2Warp4.5</string>
+      <string>OS2 Warp4.5</string>
      </property>
     </item>
     <item>
@@ -321,7 +338,7 @@
     </item>
     <item>
      <property name="text">
-      <string>RadHat</string>
+      <string>RedHat</string>
      </property>
     </item>
     <item>
@@ -336,12 +353,12 @@
     </item>
     <item>
      <property name="text">
-      <string>Solaris 11</string>
+      <string>Solaris 64</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Solaris 64</string>
+      <string>Solaris 11</string>
      </property>
     </item>
     <item>
@@ -371,7 +388,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Windows10_64</string>
+      <string>Windows10 64</string>
      </property>
     </item>
     <item>
@@ -466,7 +483,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Windows NT 64</string>
+      <string>Womdows NT 4 64</string>
      </property>
     </item>
     <item>
@@ -500,18 +517,117 @@
      </property>
     </item>
    </widget>
+   <widget class="QLabel" name="lblOS">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Operating System</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblRAM">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>64</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>RAM</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>110</y>
+      <width>211</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999999999</number>
+    </property>
+    <property name="value">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>150</y>
+      <width>211</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999999999</number>
+    </property>
+    <property name="value">
+     <number>10000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblHDD">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>64</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Storage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cbCreate">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>220</y>
+      <width>83</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Create</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>120</y>
+      <width>64</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>150</y>
+      <width>64</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MB</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>452</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
