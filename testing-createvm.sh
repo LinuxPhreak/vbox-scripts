@@ -129,9 +129,12 @@ if [ -z "${n}" ] || [ -z "${a}" ] || [ -z "${m}" ] || [ -z "${s}" ]; then
     usuage
 fi
 
-VBoxManage createvm --name "${n}" --ostype ${a} --register
-VBoxManage modifyvm "${n}" --memory ${m}
-VBoxManage createhd --filename "$vboxdir/${n}/${n}.vdi" --size ${s} --format VDI
-VBoxManage storagectl "${n}" --name "IDE Controller" --add ide --controller PIIX4
-VBoxManage storageattach "${n}" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/${n}/${n}.vdi"
-VBoxManage storageattach "${n}" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive
+if [[ -d "$vboxdir" ]]; then
+	#statements
+	VBoxManage createvm --name "${n}" --ostype ${a} --register
+	VBoxManage modifyvm "${n}" --memory ${m}
+	VBoxManage createhd --filename "$vboxdir/${n}/${n}.vdi" --size ${s} --format VDI
+	VBoxManage storagectl "${n}" --name "IDE Controller" --add ide --controller PIIX4
+	VBoxManage storageattach "${n}" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/${n}/${n}.vdi"
+	VBoxManage storageattach "${n}" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive
+fi
