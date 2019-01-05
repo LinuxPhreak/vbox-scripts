@@ -126,7 +126,7 @@ done
 shift $((OPTIND-1))
 
 if [ -z "${n}" ] || [ -z "${a}" ] || [ -z "${m}" ] || [ -z "${s}" ]; then
-    usage
+    usuage
 fi
 
 VBoxManage createvm --name "${n}" --ostype ${a} --register
