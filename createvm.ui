@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>452</width>
+    <height>316</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lblVMName">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leName">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>351</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="viewMode">
+     <enum>QListView::ListMode</enum>
+    </property>
+    <item>
+     <property name="text">
+      <string>ArchLinux</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ArchLinux 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Debian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Debian 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DOS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Fedora</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Fedora 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>FreeBSD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>FreeBSD 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gentoo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gentoo 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>JRockitVE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>L4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Linux 2.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Linux 2.4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Linux 2.4 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Linux 2.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Linux 2.6 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mac OS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.10 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.11 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.12 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.13 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.6 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.7 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.8 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 10.9 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MacOSX 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mandriva</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mandriva 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>NetBSD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>NetBSD 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Netware</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OpenBSD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OpenBSD 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OpenSolaris</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OpenSolaris 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OpenSUSE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OpenSUSE 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Oracle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Oracle 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OS2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OS21x</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OS2eCS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OS2Warp3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OS2Warp4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OS2Warp4.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Other</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Other 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>QNX</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RadHat</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RedHat 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Solaris</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Solaris 11</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Solaris 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Turbolinux</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Turbolinux 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ubuntu</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ubuntu 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>VBoxBS_64Windows10</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows10_64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 2000</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 2003</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 2008</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 2012 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 2016 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 3.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 7 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 8 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 8.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 8.1 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 95</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows 98</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows Me</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows NT</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows NT 3x</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows NT 4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows NT 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows Vista</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows Vista 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows XP</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Windows XP 64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Xandros</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Xandros 64</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>452</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
