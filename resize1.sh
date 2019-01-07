@@ -12,6 +12,8 @@ while getopts ":m:n:" o; do
 	esac
 done
 
-if [[ -d "$vboxdir" ]]; then
-	VBoxManage modifyhd "$vboxdir/${n}/${n}.vdi" --resize ${m}
+if [[ -d "$vboxdir" && ${m} =~ ^[0-9]+$ ]]; then
+		VBoxManage modifyhd "$vboxdir/${n}/${n}.vdi" --resize ${m}
+else
+	echo "Memory argument needs to be an integer"
 fi
