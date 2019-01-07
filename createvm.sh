@@ -43,14 +43,22 @@ if [ -z "${n}" ] || [ -z "${a}" ] || [ -z "${m}" ] || [ -z "${s}" ]; then
 fi
 
 if [[ -d "$vboxdir" ]]; then
-	if [[ ${a} =~ ^($oses)$ ]]; then
+	if [[ ${a} =~ ^($oses)$ && ${m} =~ ^[0-9]+$ && ${s} =~ ^[0-9]+$ ]]; then
 		VBoxManage createvm --name "${n}" --ostype ${a} --register
 		VBoxManage modifyvm "${n}" --memory ${m}
 		VBoxManage createhd --filename "$vboxdir/${n}/${n}.vdi" --size ${s} --format VDI
 		VBoxManage storagectl "${n}" --name "IDE Controller" --add ide --controller PIIX4
 		VBoxManage storageattach "${n}" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$vboxdir/${n}/${n}.vdi"
 		VBoxManage storageattach "${n}" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium emptydrive
+	elif [[ ${a} =~ ^($oses)$ && ${m} =~ ^[0-9]+$ && ! ${s} =~ ^[0-9]+$ ]]; then
+		echo -e "HDD size must be an integer in MB"
+	elif [[ ${a} =~ ^($oses)$ && ! ${m} =~ ^[0-9]+$ && ${s} =~ ^[0-9]+$ ]]; then
+		echo -e "Memory size must be an integer in MB"
+	elif [[ ${a} =~ ^($oses)$ && ! ${m} =~ ^[0-9]+$ && ! ${s} =~ ^[0-9]+$ ]]; then
+		echo -e "Sizes must be numbers"
+	elif [[ ! ${a} =~ ^($oses)$ && ${m} =~ ^[0-9]+$ && ${s} =~ ^[0-9]+$ ]]; then
+		echo -e "Operating System type not found"
 	else
-		echo -e "No Operating System Found"
+		echo -e "Something went wrong"
 	fi
 fi
