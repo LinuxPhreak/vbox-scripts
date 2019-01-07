@@ -3,17 +3,18 @@
 # This shell script has been tested on Fedora 28 LXDE
 # Bug report https://www.virtualbox.org/ticket/18259 LinuxPhreak2600 aka LinuxPhreak aka Ben P. Dorsi-Todaro
 # This shell script is provided by Ben P. Dorsi-Todaro
-echo -e "Which Virtual Machine do you want to make a Desktop Shortcut for?"
-read vmname
-if [[ -d "$HOME/VirtualBox VMs" ]]; then
-	echo -e "[Desktop Entry]" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Encoding=UTF-8" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Version=1.0" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Name=$vmname" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Comment=Starts the VirtualBox machine $vmname" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Type=Application" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Exec=VBoxManage startvm '$vmname' %u" >> $HOME/Desktop/$vmname.Desktop
-	echo -e "Icon=virtualbox-vbox.png" >> $HOME/Desktop/$vmname.Desktop
-	chmod +x "$HOME/Desktop/$vmname.Desktop"
+
+if [[ -d "$HOME/VirtualBox VMs/$*" ]]; then
+	echo -e "[Desktop Entry]" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Encoding=UTF-8" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Version=1.0" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Name=$*" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Comment=Starts the VirtualBox machine $vmname" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Type=Application" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Exec=VBoxManage startvm '$*' %u" >> "$HOME/Desktop/$*.desktop"
+	echo -e "Icon=virtualbox-vbox.png" >> "$HOME/Desktop/$*.desktop"
+	chmod +x "$HOME/Desktop/$*.desktop"
 	echo -e "The shortcut was successfully created..."
+else
+	echo "VM $* doesn't appear to exists."
 fi
