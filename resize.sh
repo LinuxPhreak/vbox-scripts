@@ -1,18 +1,19 @@
-#/usr/bin/env sh
-echo -e "What VM do you want make larger?"
-read vmname
-echo -e "You want to make $vmname larger? (y/N)"
-read yesno
-if [[ $yesno == "n" || $yesno == "N" ]]; then
-	while [[ $yesno != "y" || $yesno != "Y" ]]; do
-		echo -e "What VM do you want make larger?"
-		read vmname
-		echo -e "You want to make $vmname larger? (y/N)"
-		read yesno
-		if [[ $yesno == "y" || $yesno == "Y" ]]; then
-			break
-		fi
-	done
+#!/usr/bin/env sh
+vboxdir="$HOME/VirtualBox VMs"
+
+while getopts ":m:n:" o; do
+	case "${o}" in
+		m)
+			m=${OPTARG}
+		;;
+		n)
+			n=${OPTARG}
+		;;
+	esac
+done
+
+if [[ -d "$vboxdir" && ${m} =~ ^[0-9]+$ ]]; then
+		VBoxManage modifyhd "$vboxdir/${n}/${n}.vdi" --resize ${m}
+else
+	echo "Memory argument needs to be an integer"
 fi
-echo -e "What size in MB do you want to make your VM?"
-read size
