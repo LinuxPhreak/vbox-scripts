@@ -1,6 +1,12 @@
 #!/usr/bin/env sh
-echo -e "What VM?"
-read -r vname
-if [ "$(VBoxManage list vms | grep -c "$vname")" != 0 ]; then
+while getopts ":n:" o; do
+	case "${o}" in
+		n)
+			n=${OPTARG}
+		;;
+	esac
+done
+
+if [ "$(VBoxManage list vms | grep -c "${n}")" != 0 ]; then
     echo exists
 fi
